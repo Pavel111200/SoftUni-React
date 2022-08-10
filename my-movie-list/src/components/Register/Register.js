@@ -1,14 +1,36 @@
 import styles from './Register.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from '../../contexts/UserContext';
+import { register } from '../../services/userService';
+
 
 const Register = () => {
+    const { userLogin } = useUserContext();
+    const navigate = useNavigate();
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const {
+            email,
+            password,
+            username
+        } = Object.fromEntries(new FormData(e.target));
+
+        register({ email, password, username })
+            .then(result=> {
+                userLogin(result);
+                navigate('/');
+            });
+
+    }
+
     return (
         <div className={styles.formWrapper}>
-            <form action="">
+            <form onSubmit={onSubmit}>
                 <img className={styles.formImg} src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="user-logo" />
                 <h2 className={styles.formTitle}>Register Here</h2>
                 <div className={styles.inputWrapper}>
-                    <input type="text" placeholder="Username" class={styles.formInput} />
+                    <input type="text" placeholder="Username" class={styles.formInput}  name="username"/>
                     <i className={styles.icon + " fa-solid fa-user icon"}></i>
                 </div>
                 <div className={styles.inputWrapper}>

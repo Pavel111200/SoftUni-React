@@ -1,10 +1,30 @@
 import styles from './Login.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../../services/userService';
+import { useUserContext } from '../../contexts/UserContext';
 
 const Login = () => {
+    const { userLogin } = useUserContext();
+    const navigate = useNavigate();
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const {
+            email,
+            password,
+        } = Object.fromEntries(new FormData(e.target));
+
+        login({ email, password })
+            .then(result=> {
+                userLogin(result);
+                navigate('/');
+            });
+
+    }
+
     return (
         <div className={styles.formWrapper}>
-            <form action="">
+            <form onSubmit={onSubmit}>
                 <img className={styles.formImg} src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="user-logo" />
                 <h2 className={styles.formTitle}>Login Here</h2>
                 <div className={styles.inputWrapper}>
