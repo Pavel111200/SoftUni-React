@@ -1,5 +1,12 @@
-.title{
+.title , .subTitle{
     text-align: center;
     font-weight: 700;
+}
+
+.title{
     font-size: 46px;
+}
+
+.subTitle{
+    font-size: 40px;
 }

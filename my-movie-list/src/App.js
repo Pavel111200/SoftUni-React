@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import { UserProvider } from './contexts/UserContext';
 import Logout from './components/Logout/Logout';
 import Create from './components/Create/Create';
+import AllMovies from './components/AllMovies/AllMovies';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/create' element={<Create />} />
+          <Route path='/catalog' element={<AllMovies/>} />
         </Routes>
       </UserProvider>
     </div>

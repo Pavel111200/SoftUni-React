@@ -1,15 +1,13 @@
 import styles from './Card.module.css'
 
-const Card = () => {
+const Card = ({ movie }) => {
     return (
         <li className={styles.item}>
-            <img className={styles.img} src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/avengers-infinity-war_89e0d364_240x360_crop_center.progressive.jpg?v=1631200474" alt="Movie poster" />
-            <h2 className={styles.title}>Avengers End Game!</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima, facilis culpa libero, possimus in
-            </p>
+            <img className={styles.img} src={movie.img} alt="Movie poster" />
+            <div className={styles.wrapper}>
+                <h2 className={styles.title}>{movie.title}</h2>
+            </div>
             <button className={styles.btn}>Details</button>
-            <p><i className="fa-solid fa-star"></i> 10</p>
         </li>
     );
 }
