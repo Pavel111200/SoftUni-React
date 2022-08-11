@@ -10,8 +10,13 @@ const Home = () => {
     useEffect(() => {
         getAll()
         .then(result => {
-            console.log(result);
-            setMovies(result);
+            setMovies(result.sort((a,b) => {
+                a.rating === undefined ? a.rating = '0' : a.rating = a.rating;
+
+                b.rating === undefined ? b.rating ='0' : b.rating = b.rating;
+
+                return b.rating- a.rating;
+            }).slice(0,3));
         })
     },[]);
 

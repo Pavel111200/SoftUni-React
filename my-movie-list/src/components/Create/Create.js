@@ -16,10 +16,10 @@ const Create = () => {
             genre,
             runtime,
             rating,
-            desc
+            description
         } = Object.fromEntries(new FormData(e.target));
 
-        create({ img, title, genre, runtime, rating, desc }, user.accessToken)
+        create({ img, title, genre, runtime, rating, description }, user.accessToken)
             .then(() => {
                 navigate('/');
             });
@@ -49,16 +49,16 @@ const Create = () => {
                 <label htmlFor="img" className={styles.label}>
                     Image Url:
                 </label>
-                <input type="text" name="imgUrl" className={styles.input} />
+                <input type="text" name="img" className={styles.input} />
                 <label htmlFor="rating" className={styles.label}>
                     Rating:
                 </label>
-                <input type="number" max={10} min={1} className={styles.input} />
-                <label htmlFor="desc" className={styles.label}>
+                <input type="number" max={10} min={1} className={styles.input} name="rating"/>
+                <label htmlFor="description" className={styles.label}>
                     Description:
                 </label>
                 <textarea
-                    name="desc"
+                    name="description"
                     cols={30}
                     rows={10}
                     className={styles.input}

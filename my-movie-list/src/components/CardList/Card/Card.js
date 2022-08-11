@@ -1,4 +1,5 @@
 import styles from './Card.module.css'
+import { Link } from 'react-router-dom';
 
 const Card = ({ movie }) => {
     return (
@@ -7,7 +8,7 @@ const Card = ({ movie }) => {
             <div className={styles.wrapper}>
                 <h2 className={styles.title}>{movie.title}</h2>
             </div>
-            <button className={styles.btn}>Details</button>
+            <Link to={`/catalog/${movie._id}`} className={styles.btn}>Details</Link>
         </li>
     );
 }

@@ -8,6 +8,8 @@ import { UserProvider } from './contexts/UserContext';
 import Logout from './components/Logout/Logout';
 import Create from './components/Create/Create';
 import AllMovies from './components/AllMovies/AllMovies';
+import MovieDetails from './components/MovieDetails/MovieDetails';
+import MovieEdit from './components/MovieEdit/MovieEdit';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/logout' element={<Logout />} />
           <Route path='/create' element={<Create />} />
           <Route path='/catalog' element={<AllMovies/>} />
+          <Route path='/catalog/:movieId' element={<MovieDetails/>} />
+          <Route path='/catalog/:movieId/edit' element={<MovieEdit />} />
         </Routes>
       </UserProvider>
     </div>

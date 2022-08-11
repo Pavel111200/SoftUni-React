@@ -22,14 +22,18 @@
 
 .btn{
     position: absolute;
-    left: 15px;
+    left: 12px;
     bottom: 10px;
-    width: 91%;
+    width: 70%;
     border-radius: 15px;
+    border: 2px solid black;
     padding: 16px 32px;
     font-size: 16px;
     font-weight: 700;
-    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: #f0f0f0;
 }
 
 .wrapper{
