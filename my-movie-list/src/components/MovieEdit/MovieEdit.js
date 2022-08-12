@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";
 import { editMovie, getOne } from "../../services/movieService";
 import styles from './MovieEdit.module.css';
@@ -22,9 +22,14 @@ const MovieEdit = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
-        editMovie(movie,user.accessToken)
+        try {
+            editMovie(movie,user.accessToken)
         .then(()=> navitage(`/catalog/${movieId}`));
+        } catch (error) {
+            <Navigate to='/404' replace />
+        }
+
+        
     }
 
     const onChange = (e) => {

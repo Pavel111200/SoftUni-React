@@ -35,6 +35,9 @@ const Header = () => {
                 {isAuthenticated &&
                     <>
                         <li className={styles.listItem}>
+                            <Link to="/mymovies" className={styles.link}>My Movie</Link>
+                        </li>
+                        <li className={styles.listItem}>
                             <Link to="/create" className={styles.link}>Create Movie</Link>
                         </li>
                         <li className={styles.listItem}>

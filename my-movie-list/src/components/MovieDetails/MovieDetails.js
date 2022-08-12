@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Link, useParams, useNavigate} from 'react-router-dom';
+import {Link, useParams, useNavigate, Navigate} from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import { deleteMovie, getOne } from '../../services/movieService';
 import styles from './MovieDetails.module.css';
@@ -20,7 +20,7 @@ const MovieDetails = () => {
             getOne(movieId)
             .then(result => setMovie(result));
         } catch (error) {
-            console.log(error);
+            <Navigate to='/404' replace />
         }
     },[movieId]);
 
