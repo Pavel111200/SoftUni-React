@@ -25,13 +25,14 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/catalog' element={<AllMovies/>} />
-          <Route path='/catalog/:movieId' element={<MovieDetails/>} />
-          <Route path='/catalog/:movieId/edit' element={<MovieEdit />} />
+          
 
           <Route element={<PrivateRoute />}>
             <Route path='/logout' element={<Logout />} />
             <Route path='/create' element={<Create />} />
             <Route path='/mymovies' element={<MyMovies />} />
+            <Route path='/catalog/:movieId' element={<MovieDetails/>} />
+            <Route path='/catalog/:movieId/edit' element={<MovieEdit />} />
           </Route>
 
           <Route path='*' element={<NotFoundComponent />} />
