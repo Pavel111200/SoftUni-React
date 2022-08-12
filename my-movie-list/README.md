@@ -39,6 +39,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## About server
+
+This project uses SoftUni practice server as its back-end [SoftUni practice server documentation](https://github.com/softuni-practice-server/softuni-practice-server).
+
+## About project
+
+### User Authentication
+
+This app has a public/guest area and a private/user area.
+
+In the guest area you can register/login and check all the movies on the server.
+
+In the user area users can view the full information for the movie, add a movies, edit movies they added and view their own movies. 
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
